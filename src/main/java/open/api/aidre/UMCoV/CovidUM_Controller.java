@@ -96,7 +96,7 @@ public class CovidUM_Controller extends CovidUm_Application {
     private Object root;
     @FXML
     public void life() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(CovidUm_Application.class.getResource("covid.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(CovidUm_Application.class.getResource("loadingScreen_Controller.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
         stage.show();
@@ -141,7 +141,6 @@ public class CovidUM_Controller extends CovidUm_Application {
      * countries to the dropdown menu
      */
     public void initialize() throws InterruptedException, IOException {
-        life();
         String retrievedAPI = getApiKey();
         System.out.println("API Key Retrieved!");
         System.out.println("API Key: " + retrievedAPI);
