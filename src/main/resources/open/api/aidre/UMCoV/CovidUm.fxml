@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="819.0" prefWidth="611.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="open.api.aidre.UMCoV.CovidUM_Controller">
+   <children>
+      <VBox layoutX="59.0" layoutY="67.0" prefHeight="57.0" prefWidth="493.0">
+         <children>
+            <HBox prefHeight="57.0" prefWidth="431.0">
+               <children>
+                  <ImageView fitHeight="57.0" fitWidth="153.0">
+                     <image>
+                        <Image url="@logo-um.png" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="57.0" prefWidth="337.0" text=" COVID-19 Tracker">
+                     <font>
+                        <Font name="NYTCheltenham Light" size="42.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children></VBox>
+      <VBox layoutX="96.0" layoutY="541.0" prefHeight="130.0" prefWidth="419.0" spacing="10.0">
+         <children>
+            <HBox prefHeight="4.0" prefWidth="100.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="26.0" prefWidth="220.0" text="Country :  " textAlignment="RIGHT">
+                     <font>
+                        <Font name="NYTImperial Regular" size="20.0" />
+                     </font></Label>
+                  <Label fx:id="value_country" prefHeight="26.0" prefWidth="192.0" text="Value">
+                     <font>
+                        <Font name="NYTImperial Regular" size="20.0" />
+                     </font></Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="4.0" prefWidth="100.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="26.0" prefWidth="220.0" text="Total Cases :  " textAlignment="RIGHT">
+                     <font>
+                        <Font name="NYTImperial Regular" size="20.0" />
+                     </font></Label>
+                  <Label fx:id="value_cases" prefHeight="26.0" prefWidth="188.0" text="Value">
+                     <font>
+                        <Font name="NYTImperial Regular" size="20.0" />
+                     </font></Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="4.0" prefWidth="100.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="26.0" prefWidth="220.0" text="Total Deaths :  " textAlignment="RIGHT">
+                     <font>
+                        <Font name="NYTImperial Regular" size="20.0" />
+                     </font></Label>
+                  <Label fx:id="value_deaths" prefHeight="26.0" prefWidth="189.0" text="Value">
+                     <font>
+                        <Font name="NYTImperial Regular" size="20.0" />
+                     </font></Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="4.0" prefWidth="100.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="26.0" prefWidth="220.0" text="Total Recovered :  " textAlignment="RIGHT">
+                     <font>
+                        <Font name="NYTImperial Regular" size="20.0" />
+                     </font></Label>
+                  <Label fx:id="value_recovered" prefHeight="26.0" prefWidth="187.0" text="Value">
+                     <font>
+                        <Font name="NYTImperial Regular" size="20.0" />
+                     </font></Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="4.0" prefWidth="100.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="26.0" prefWidth="221.0" text="Active Cases :  " textAlignment="RIGHT">
+                     <font>
+                        <Font name="NYTImperial Regular" size="20.0" />
+                     </font></Label>
+                  <Label fx:id="value_active" prefHeight="26.0" prefWidth="188.0" text="Value">
+                     <font>
+                        <Font name="NYTImperial Regular" size="20.0" />
+                     </font></Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <HBox alignment="CENTER" layoutX="154.0" layoutY="738.0" prefHeight="26.0" prefWidth="309.0" spacing="10.0">
+         <children>
+            <JFXComboBox fx:id="country_choices" focusColor="#a84040" prefHeight="25.0" prefWidth="192.0" promptText="Philippines" unFocusColor="#009edb" />
+            <JFXButton fx:id="button_country" buttonType="RAISED" onAction="#country_input" prefHeight="25.0" prefWidth="105.0" ripplerFill="#e4f1ff" style="-fx-border-radius: 15; -fx-background-color: #009EDB;" text="Button" textFill="WHITE" />
+         </children>
+      </HBox>
+      <LineChart fx:id="covid_graph" layoutX="56.0" layoutY="154.0" prefHeight="371.0" prefWidth="500.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+   </children>
+</AnchorPane>
