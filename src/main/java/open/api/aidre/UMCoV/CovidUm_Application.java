@@ -9,6 +9,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.util.Objects;
+
 /**
  * It loads the FXML file, sets the scene to the root, makes the window transparent, allows the user to
  * drag the window around the screen, shows the stage, and plays the fade in animation
@@ -25,7 +27,7 @@ public class CovidUm_Application extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         // Loading the FXML file that is being used to display the GUI.
-        Parent root = FXMLLoader.load(getClass().getResource("CovidUm.fxml"));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("CovidUm.fxml")));
         // Setting the scene to the root and making the window transparent.
         primaryStage.setScene(new Scene(root));
         primaryStage.initStyle(StageStyle.UNDECORATED);
@@ -43,7 +45,6 @@ public class CovidUm_Application extends Application {
         primaryStage.show();
         new FadeIn(root).play();
     }
-
     public static void main(String[] args) {
         // Calling the `start()` function.
         launch();

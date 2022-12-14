@@ -47,7 +47,7 @@ public class Svene {
 
 class Svene_Backend {
     StringBuilder apiConfiguration(String prompt) throws IOException {
-        String apiKey = "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";
+        String apiKey = "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";
         String endpoint = "https://api.openai.com/v1/completions";
         URL url = new URL(endpoint);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
