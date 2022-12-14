@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="193.0" prefWidth="611.0" type="AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="open.api.aidre.UMCoV.CovidUM_Controller">
+   <children>
+      <VBox layoutX="59.0" layoutY="67.0" prefHeight="57.0" prefWidth="493.0">
+         <children>
+            <HBox prefHeight="57.0" prefWidth="431.0">
+               <children>
+                  <ImageView fitHeight="57.0" fitWidth="153.0">
+                     <image>
+                        <Image url="@logo-um.png" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="57.0" prefWidth="337.0" text=" COVID-19 Tracker">
+                     <font>
+                        <Font name="NYTCheltenham Light" size="42.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children></VBox>
+   </children>
+</fx:root>

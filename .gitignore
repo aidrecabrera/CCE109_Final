@@ -36,3 +36,6 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+### Api Key Ignored
+src/main/resources/open/api/aidre/UMCoV/api_keys.properties
