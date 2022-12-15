@@ -8,6 +8,7 @@ module open.api.aidre.cce109_final {
     requires nv.i18n;
     requires java.desktop;
     requires AnimateFX;
+    requires java.net.http;
 
     opens open.api.aidre.UMCoV to javafx.fxml;
     exports open.api.aidre.UMCoV;
