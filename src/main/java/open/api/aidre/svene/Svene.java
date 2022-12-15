@@ -20,18 +20,22 @@ public class Svene {
         System.out.print("What is your name? ");
         String NameOfUserSession = scanner.nextLine();
         CHAT_LOG.put(NameOfUserSession, NameOfUserSession);
-        System.out.println("Svene: Hello, " + NameOfUserSession + "! I am Svene the Chat Bot.");
-        CHAT_LOG.put("Svene", "Hello, " + NameOfUserSession + "! I am Svene the Chat Bot.");
+        System.out.println("Trisha: Hello, " + NameOfUserSession + "! I am Trisha the Chat Bot.");
+        CHAT_LOG.put("Trisha", "Hello, " + NameOfUserSession + "! I am Trisha the Chat Bot.");
         int x = 0;
-        while (x<2) {
+        while (true) {
             System.out.print("Your Turn: ");
             String userPrompt = scanner.nextLine();
+            if (userPrompt == "End" || userPrompt == "Exit Svene") {
+                break;
+            }
             CHAT_LOG.put(NameOfUserSession, userPrompt);
             StringBuilder retrievedJSON = sveneBackend.apiConfiguration(userPrompt);
             String promptResponse = sveneBackend.parsingResponse(retrievedJSON);
-            CHAT_LOG.put("Svene", promptResponse);
-            System.out.println("Svene: " + promptResponse);
+            CHAT_LOG.put("Trisha", promptResponse);
+            System.out.println("Trisha: " + promptResponse);
             x++;
+
         }
         System.out.println("Open Chat Log?");
         System.out.println("[1] - Yes or [0] - No: ");
@@ -47,7 +51,7 @@ public class Svene {
 
 class Svene_Backend {
     StringBuilder apiConfiguration(String prompt) throws IOException {
-        String apiKey = "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";
+        String apiKey = "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";
         String endpoint = "https://api.openai.com/v1/completions";
         URL url = new URL(endpoint);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -55,7 +59,7 @@ class Svene_Backend {
         connection.setRequestProperty("Content-Type", "application/json");
         connection.setRequestProperty("Authorization", "Bearer " + apiKey);
         String model = "text-davinci-003";
-        int maximumLength = 70;
+        int maximumLength = 150;
         String requestBody = "{\"prompt\": \"" + prompt + "\", \"model\": \"" + model + "\", \"max_tokens\": " + maximumLength + "}";
         connection.setDoOutput(true);
         OutputStreamWriter writer = new OutputStreamWriter(connection.getOutputStream());
